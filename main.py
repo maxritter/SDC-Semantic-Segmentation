@@ -115,8 +115,8 @@ def run():
     helper.maybe_download_pretrained_vgg(data_dir)
 
     # Hyper-Parameter
-    batch_size = 48
-    epochs = 40
+    batch_size = 1
+    epochs = 10
     learning_rate = tf.constant(1e-4)
 
     # Run tensorflow session

@@ -2,9 +2,9 @@
 
 In this project, pixels of a road in images are labeled using a Fully Convolutional Network (FCN). I started with the VGG16 network and added skip layers, 1x1 convolutions and upsampling to build the FCN.
 
-This implementation is based on the 2015 paper [Fully Convolutional Networks for Semantic Segmentation](https://arxiv.org/abs/1605.06211) from UC Berkeley. As for the framework, TensorFlow is used. The network has been trained on an Amazon p2.xlarge GPU instance with around 11GB of graphic memory. The batch size of 48 uses almost everything of that memory and the network is trained for 40 epochs, which takes about an hour. 
+This implementation is based on the 2015 paper [Fully Convolutional Networks for Semantic Segmentation](https://arxiv.org/abs/1605.06211) from UC Berkeley. As for the framework, TensorFlow is used. The network has been trained on an Amazon p2.xlarge GPU instance with around 11GB of graphic memory. The batch size is set to 1 and the network is trained for 10 epochs. With those settings, the results are much better than with a larger batch size and a higher number of epochs.
 
-As regularization, dropout with a drop-rate of 20% is used together with a L2-regularizer for the kernel weights of the decoder convolutions. Adam is used as optimizer, because is a good choice for most deep learning projects. The loss decreases the most in the first ten epochs. Afterwards, it is more like a fine-tuning to get smooth edges for the road pixel labeling, the final loss value is at around 0.02. This project was part of term 3 of the Udacity [self-driving car](https://www.udacity.com/drive) nanodegree program.
+As regularization, dropout with a drop-rate of 20% is used together with a L2-regularizer for the kernel weights of the decoder convolutions. Adam is used as optimizer, because is a good choice for most deep learning projects. The final loss value is at around 0.05. This project was part of term 3 of the Udacity [self-driving car](https://www.udacity.com/drive) nanodegree program.
 
 Example images:
 
